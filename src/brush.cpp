@@ -52,7 +52,7 @@ namespace mydraw
 		}
  void eraser_point_brush_t::stroke (unsigned int xpos, unsigned int ypos, canvas_t *canvas)
  {
-   if (get_size()==1) canvas->set_pixel(xpos,ypos);
+   if (get_size()==1) canvas->erase_pixel(xpos,ypos);
  }
   
 }
