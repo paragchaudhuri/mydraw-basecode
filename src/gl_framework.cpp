@@ -119,6 +119,7 @@ namespace csX75
     mydraw::canvas_t* mycanvas = reinterpret_cast<mydraw::canvas_t*>(glfwGetWindowUserPointer(window));
 
     //!Close the window if the ESC key was pressed
+    //!Save to a .tga file if the 'S' key was pressed. Can you figure out the code that saves the drawing to a .tga file?
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
       glfwSetWindowShouldClose(window, GL_TRUE);
     else if (key == GLFW_KEY_S && action == GLFW_PRESS)
@@ -138,6 +139,8 @@ namespace csX75
 
     switch(button)
     {
+      //Note: This only plots a point when the mouse is clicked. Repeated points need repeated clicks which may be cumbersome.
+      //A better solution is to implement the point brush using a click and drag method - figure out how to implement click and draw in GLFW.
       case GLFW_MOUSE_BUTTON_LEFT:
         if (action == GLFW_PRESS)
         {
